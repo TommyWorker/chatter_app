@@ -1,0 +1,200 @@
+// Place all the styles related to the talks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* talks/index ================================ */
+.talks-heading {
+  font-weight: 300;
+  margin: 60px 0 20px;
+  font-size: 48px;
+  color: #bcc8d4;
+}
+
+.talks-index-item {
+  padding: 20px 30px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.talk-name a {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.talk-name a:hover {
+  color: #3ecdc6;
+}
+
+.talk-left img {
+  width: 50px;
+  height: 50px;
+  border-radius: 40%;
+  box-shadow: 0 2px 6px #c1ced7;
+  object-fit: cover;
+}
+
+.talk-left {
+  float: left;
+  width: 10%;
+}
+
+.talk-right {
+  float: left;
+  width: 90%;
+  padding-left: 25px;
+  text-align: left;
+}
+
+.talks-list{
+  margin-top:  0px;
+  padding: 10px;
+  padding-bottom:  50px;
+  max-width: 600px;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+/*——————–
+ 吹き出しを作る
+——————–*/
+/* 全体のスタイル */
+.msg {
+  margin-top: 25px;
+
+}
+/* 左画像 */
+.msg-img-left {
+  margin: 0;
+  float: left;
+  width: 60px;
+  height: 60px;
+  margin-right: -70px;
+}
+/* 右画像 */
+.msg-img-right {
+  margin: 0;
+  float: right;
+  width: 60px;
+  height: 60px;
+  margin-left: -70px;
+}
+.msg figure img {
+  width: 60px;
+  height: 60px;
+  border: 1px solid #aaa;
+  border-radius: 50%;
+  margin: 0;
+}
+/* 画像の下のテキスト */
+.msg-img-description {
+  padding: 5px 0 0;
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  bottom: 15px;
+}
+/* 左からの吹き出しテキスト */
+.msg-text-right {
+  position: relative;
+  margin-left: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #eee;
+  margin-right: 12%;
+  float: left;
+  max-width: 350px;
+  word-break: break-all;
+}
+/* 右からの吹き出しテキスト */
+.msg-text-left {
+  position: relative;
+  margin-right: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #9cd6e7;
+  margin-left: 12%;
+  float: right;
+  max-width: 350px;
+  word-break: break-all;
+}
+p.msg-text {
+  margin: 0 0 20px;
+}
+p.msg-text:last-child {
+  margin-bottom: 0;
+}
+/* 左の三角形を作る */
+.msg-text-right:before {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  top: 15px;
+  left: -20px;
+}
+.msg-text-right:after {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-right: 10px solid #eee;
+  top: 15px;
+  left: -19px;
+}
+/* 右の三角形を作る */
+.msg-text-left:before {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  top: 15px;
+  right: -20px;
+}
+.msg-text-left:after {
+  position: absolute;
+  content: '';
+  border: 10px solid transparent;
+  border-left: 10px solid #9cd6e7;
+  top: 15px;
+  right: -19px;
+}
+/* 回り込み解除 */
+.msg:after,.msg:before {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+button.talks-submit {
+  border: none;
+  background-color: #3ecdc6;
+  color: white;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 13px;
+  width: 80px;
+  height: 35px;
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  float: right;
+
+}
+
+textarea.talks-text{
+  width: 480px;
+  border: 1px solid #d8dadf;
+  min-height: 40px;
+  font-size: 16px;
+  letter-spacing: 0px;
+}
+
+.talks-form{
+  max-width: 600px;
+
+}
+
+.talks-heading{
+  font-weight: 300;
+  margin: 0px 0 0px;
+  font-size: 28px;
+  color: #bcc8d4;
+}

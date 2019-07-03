@@ -1,0 +1,28 @@
+<div class="msg">
+  <%if message.user_id == @current_user.id%>
+  <figure class="msg-img-right">
+   <img src="<%="/user_images/#{message.image_name}"%>">
+   <figcaption class="msg-img-description">
+    <%=message.name%>
+   </figcaption>
+  </figure>
+  <div class="msg-text-left">
+   <p class="msg-text">
+     <%=simple_format(message.content, {}, wrapper_tag: "none")%>
+
+   </p>
+  </div>
+  <%else%>
+    <figure class="msg-img-left">
+     <img src="<%="/user_images/#{message.image_name}"%>">
+     <figcaption class="msg-img-description">
+      <%=message.name%>
+     </figcaption>
+    </figure>
+    <div class="msg-text-right">
+     <p class="msg-text">
+       <%=simple_format(message.content, {}, wrapper_tag: "none")%>
+     </p>
+    </div>
+  <%end%>
+</div>

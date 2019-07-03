@@ -1,0 +1,24 @@
+<div class="main talks-index">
+  <div class="container">
+    <h1 class="talks-heading">ルーム一覧</h1>
+    <% @talks.each do |talk| %>
+    <% target_user_id = "" %>
+      <div class="talks-index-item">
+        <div class="talk-left">
+          <% members = Member.where(talk_id: talk.id)%>
+          <% members.each do |member| %>
+            <% if not member.user_id == @current_user.id.to_i %>
+              <% member_user = User.find_by(id: member.user_id) %>
+              <img src="<%= "/user_images/#{member_user.image_name}" %>">
+            <% end %>
+          <% end %>
+        </div>
+        <div class="talk-right">
+          <div class="talk-name">
+            <%= link_to(talk.name, "/talks/#{talk.id}/room", data: {"turbolinks"=>false}) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

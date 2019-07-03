@@ -1,0 +1,16 @@
+<div class="main">
+  <div class="container">
+    <div class="talks-heading">チャットルーム</div>
+    <div class="talks-form">
+      <textarea id="chat-input" class="talks-text"></textarea>
+      <input type="hidden" id="h_talk_id" value="<%=@talk_id%>">
+      <input type="hidden" id="h_user_id" value="<%=@current_user.id%>">
+      <input type="hidden" id="h_user_image" value="<%=@current_user.image_name%>">
+      <input type="hidden" id="h_user_name" value="<%=@current_user.name%>">
+      <button id="msg_submit" class="talks-submit">送信</button>
+    </div>
+    <div class="talks-list" id="messages">
+      <%= render @messages %>
+    </div>
+  </div>
+</div>
