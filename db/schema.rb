@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_23_054033) do
+ActiveRecord::Schema.define(version: 2019_07_06_130900) do
 
   create_table "members", force: :cascade do |t|
     t.integer "talk_id"
