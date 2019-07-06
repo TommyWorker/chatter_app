@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'posts/index'
-  get 'talks/index'
   get '/' => "users#login_form"
   get 'login' => "users#login_form"
   get 'users/login' => "users#login_form"
