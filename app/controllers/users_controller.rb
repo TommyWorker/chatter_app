@@ -80,26 +80,29 @@ class UsersController < ApplicationController
   end
 
   def talkentry
+    # トーク相手のユーザ情報取得
+    @partner = User.find_by(id:params[:id])
 
-      @partner = User.find_by(id:params[:id])
-
-      @talk = Talk.new(name: @partner.name + "と" + @current_user.name )
-      if @talk.save
-        @member = Member.new(talk_id:@talk.id, user_id:@partner.id)
+    # Talk情報作成＞保存
+    @talk = Talk.new(name: @partner.name + "と" + @current_user.name )
+    if @talk.save
+      # メンバー（相手）情報作成＞保存
+      @member = Member.new(talk_id:@talk.id, user_id:@partner.id)
+      if @member.save
+        # メンバー（自分）情報作成＞保存
+        @member = Member.new(talk_id:@talk.id, user_id:@current_user.id)
         if @member.save
-          @member = Member.new(talk_id:@talk.id, user_id:@current_user.id)
-          if @member.save
-            flash[:notice] = "新しいルームを作成しました。"
-            redirect_to("/talks/#{@talk.id}")
-          else
-            render("/users/#{@user.id}")
-          end
+          flash[:notice] = "新しいルームを作成しました。"
+          redirect_to("/talks/#{@talk.id}")
         else
           render("/users/#{@user.id}")
         end
       else
         render("/users/#{@user.id}")
       end
+    else
+      render("/users/#{@user.id}")
+    end
   end
 
   def logout

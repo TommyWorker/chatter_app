@@ -8,10 +8,12 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-
+    # メッセージ情報取得
     @message = Message.new(talk_id:data['talk_id'], user_id:data['user_id'], content:data['message'])
+    # DBへメッセージ登録
     if @message.save
       #binding.pry
+      # クライアントへブロードキャスト
       ActionCable.server.broadcast 'room_channel', data['message'] + ':::' + data['image'] + ':::' + data['name'] + ':::' + data['user_id']
     end
 
