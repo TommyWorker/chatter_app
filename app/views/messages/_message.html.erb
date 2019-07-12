@@ -11,7 +11,7 @@
      <%=simple_format(message.content, {}, wrapper_tag: "none")%>
    </p>
    <p class="msg-timestamp">
-    <%=message.updated_at.strftime("%m月 %d日 %H:%M")%>
+    <%=message.updated_at.in_time_zone('Tokyo').strftime("%m月 %d日 %H:%M")%>
    </p>
   </div>
   <%else%>
@@ -26,7 +26,7 @@
        <%=simple_format(message.content, {}, wrapper_tag: "none")%>
      </p>
      <p class="msg-timestamp">
-      <%=message.updated_at.strftime("%m月 %d日 %H:%M")%>
+      <%=message.updated_at.in_time_zone('Tokyo').strftime("%m月 %d日 %H:%M")%>
      </p>
     </div>
   <%end%>
