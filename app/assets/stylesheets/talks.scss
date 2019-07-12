@@ -124,6 +124,10 @@ p.msg-text {
 p.msg-text:last-child {
   margin-bottom: 0;
 }
+p.msg-timestamp {
+  color:  #696969;
+  font-size:  8pt;
+}
 /* 左の三角形を作る */
 .msg-text-right:before {
   position: absolute;

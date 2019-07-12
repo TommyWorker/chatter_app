@@ -9,7 +9,9 @@
   <div class="msg-text-left">
    <p class="msg-text">
      <%=simple_format(message.content, {}, wrapper_tag: "none")%>
-
+   </p>
+   <p class="msg-timestamp">
+    <%=message.updated_at.strftime("%m月 %d日 %H:%M")%>
    </p>
   </div>
   <%else%>
@@ -22,6 +24,9 @@
     <div class="msg-text-right">
      <p class="msg-text">
        <%=simple_format(message.content, {}, wrapper_tag: "none")%>
+     </p>
+     <p class="msg-timestamp">
+      <%=message.updated_at.strftime("%m月 %d日 %H:%M")%>
      </p>
     </div>
   <%end%>
