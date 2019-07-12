@@ -22,6 +22,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
                       '</figure>' +
                       '<div class="msg-text-left">' +
                        '<p class="msg-text">' + msginfo[0].replace(/\n/g, '<br>') + '</p>' +
+                       '<p class="msg-timestamp">' + msginfo[4] + '</p>' +
                       '</div>' +
                     '</div>'
                      + messages.innerHTML
@@ -35,6 +36,7 @@ App.room = App.cable.subscriptions.create("RoomChannel", {
                       '</figure>' +
                       '<div class="msg-text-right">' +
                        '<p class="msg-text">' + msginfo[0].replace(/\n/g, '<br>') + '</p>' +
+                       '<p class="msg-timestamp">' + msginfo[4] + '</p>' +
                       '</div>' +
                     '</div>'
                      + messages.innerHTML
